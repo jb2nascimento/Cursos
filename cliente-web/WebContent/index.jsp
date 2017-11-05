@@ -1,3 +1,6 @@
+<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
+<%@page import="br.com.curso.cliente.model.Cliente"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -55,7 +58,7 @@
 				</div>
 			</div>			
 			<div class="col-sm-3">
-				<a href="manutencao.jsp" class="btn btn-primary pull-right h2">Novo Item</a>
+				<a href="manutencao.jsp" class="btn btn-primary pull-right h2">Novo Cliente</a>
 			</div>			
 		</div>
 
@@ -64,6 +67,11 @@
 		<div id="list" class="row">
 
 			<div class="table-responsive col-md-12">
+			
+			
+			<%
+				List<Cliente> clientes = (List<Cliente>) request.getAttribute("clientes");
+			%>			
 				<table class="table table-striped" cellspacing="0" cellpadding="0">
 					<thead>
 						<tr>
@@ -73,24 +81,28 @@
 						</tr>
 					</thead>
 					<tbody>
+					
+						<%
+							if(clientes != null) {						
+								for(Cliente cliente : clientes) {
+						%>											
 						<tr>
-							<td>1</td>
-							<td>Jan Nascimento</td>							
+							<td><%= cliente.getId() %></td>
+							<td><%= cliente.getNome() %></td>							
 							<td class="actions">
-								<a class="btn btn-warning btn-xs" href="manutencao.jsp">Editar</a> 
+								<a class="btn btn-warning btn-xs" href="<%="manutencao.jsp?id=" + cliente.getId() %>   manutencao.jsp">Editar</a> 
 								<a class="btn btn-danger btn-xs" href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
 							</td>
 						</tr>
-						<tr>
-							<td>2</td>
-							<td>Cliente 2</td>							
-							<td class="actions">
-								<a class="btn btn-warning btn-xs" href="manutencao.jsp">Editar</a> 
-								<a class="btn btn-danger btn-xs" href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-							</td>
-						</tr>						
+						<% 
+								} 
+							}						
+						%>
+																
 					</tbody>
 				</table>
+				
+				
 			</div>
 
 		</div>

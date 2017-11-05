@@ -17,7 +17,10 @@
 
 	<div class="container">
 
-		<form class="form-signin" action="index.jsp">
+		<form class="form-signin" action="/cliente-web/gerenciar">
+			
+			<input type="hidden" value="busca" name="tarefa" />
+		
 			<h2 class="form-signin-heading">Login</h2>
 			<label for="inputEmail" class="sr-only">Usuario]</label> <input
 				type="text" id="inputEmail" class="form-control"
