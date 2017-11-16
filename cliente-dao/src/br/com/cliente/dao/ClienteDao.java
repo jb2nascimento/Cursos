@@ -25,14 +25,12 @@ public class ClienteDao implements IDefaultDao {
 	}
 
 	@Override
-	public void insert() {
-		// TODO Auto-generated method stub
+	public void insert() {		
 		
 	}
 
 	@Override
-	public boolean update() {
-		// TODO Auto-generated method stub
+	public boolean update() {		
 		return false;
 	}
 
@@ -42,8 +40,7 @@ public class ClienteDao implements IDefaultDao {
 	}
 
 	@Override
-	public boolean delete() {
-		// TODO Auto-generated method stub
+	public boolean delete() {		
 		return false;
 	}
 
