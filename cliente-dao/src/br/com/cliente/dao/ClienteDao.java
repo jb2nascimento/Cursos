@@ -13,6 +13,8 @@ public class ClienteDao implements IDefaultDao {
 
 	public ClienteDao() {
 		initMock();
+		
+		
 	}
 	
 	
