@@ -18,19 +18,16 @@
 
 	<div class="container">
 
-		<form class="form-signin" action="/cliente-web/LoginServlet" method="post">
+		<form class="form-signin" action="/cliente-web/login" method="post">
 		
 			<h2 class="form-signin-heading">Login</h2>
 			
 				<label for="inputEmail" class="sr-only">Usuario</label>						
-				<input type="text" id="inputEmail" class="form-control"
-				placeholder="Usuario" name="txtUsuario" required autofocus /> 
-				
+				<input type="text" id="inputEmail" class="form-control"	placeholder="Usuario" name="txtUsuario" required autofocus /> 
 				<label for="inputPassword" class="sr-only">Senha</label> 
-				<input type="password" id="inputPassword" name="txtSenha" 
-				class="form-control" placeholder="Senha" required />
+				<input type="password" id="inputPassword" name="txtSenha" class="form-control" placeholder="Senha" required />
 	
-			<button class="btn btn-lg btn-primary btn-block btn-login" type="submit">Login</button>
+				<button class="btn btn-lg btn-primary btn-block btn-login" type="submit">Login</button>
 			
 		</form>
 				

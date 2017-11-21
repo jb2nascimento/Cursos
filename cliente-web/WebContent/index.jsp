@@ -1,78 +1,77 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ page language="java" import="java.util.List" %>
 <%@ page language="java" import="br.com.cliente.model.Cliente" %>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
+
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Gerenciador de Clientes</title>
-
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Gerenciador de Clientes</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
 </head>
-<body>
+
 <body>
 
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-	
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed"
-				data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-				aria-controls="navbar">
-				<span class="sr-only">Toggle navigation</span> <span
-					class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">Gerenciador de Clientes</a>
-		</div>
-		
-		<div id="navbar" class="navbar-collapse collapse">
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="login.jsp">Login</a></li>
-			</ul>
-		</div>
-		
-	</div>
+	<nav class="navbar navbar-inverse navbar-fixed-top">	
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> 
+					<span class="icon-bar"></span> <span class="icon-bar"></span> 
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Gerenciador de Clientes</a>
+			</div>			
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="login.jsp">Login</a></li>
+				</ul>
+			</div>		
+		</div>	
 	</nav>
 
 	<div id="main" class="container-fluid" style="margin-top: 50px">
 
-		<div id="top" class="row">			
+		<div id="top" class="row">		
+			
 			<div class="col-sm-3">
 				<h2>Clientes Web</h2>
-			</div>			
-			<div class="col-sm-6">
-				<div class="input-group h2">
-					<input name="data[search]" class="form-control" id="search"
-						type="text" placeholder="Pesquisar Clientes"> <span
-						class="input-group-btn">
-						<button class="btn btn-primary" type="submit" style="height: 34px;">
-							<span class="glyphicon glyphicon-search"></span>
-						</button>
-					</span>
+			</div>
+			
+			<form action="${pageContext.request.contextPath}/PesquisaClienteServlet" method="post">	
+				<div class="col-sm-6">
+					<div class="input-group h2">
+						<input name="txtPesquisa" class="form-control" id="search" type="text" placeholder="Pesquisar Clientes" value="${filtro}" /> 
+						<span class="input-group-btn">
+							<button class="btn btn-primary" type="submit" style="height: 34px;">
+								<span class="glyphicon glyphicon-search"></span>
+							</button>
+						</span>
+					</div>
+				</div>		
+			</form>	
+			
+			<form action="${pageContext.request.contextPath}/manutencao.jsp">
+				<div class="col-sm-3">
+					<input type="submit" class="btn btn-primary pull-right h2" value="Adicionar" />
 				</div>
-			</div>			
-			<div class="col-sm-3">
-				<a href="manutencao.jsp" class="btn btn-primary pull-right h2">Adicionar</a>
-			</div>			
+			</form>
+						
 		</div>
 	
-
 		<hr />
-		<div id="list" class="row">
 		
+		<div id="list" class="row">		
 		
 			<div class="table-responsive col-md-12">
 		
 				<table class="table table-striped" cellspacing="0" cellpadding="0">
+				
 					<thead>
 						<tr>
 							<th>ID</th>
@@ -82,8 +81,7 @@
 						</tr>
 					</thead>
 					
-					<tbody>
-																
+					<tbody>																
 						<c:forEach items="${clientes}" var="item" >								
 							<tr>
 								<td>${item.id}</td>
@@ -94,12 +92,10 @@
 									<a class="btn btn-danger btn-xs" href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
 								</td>
 							</tr>						
-						</c:forEach>	
-														
+						</c:forEach>														
 					</tbody>
 					
-				</table>
-				
+				</table>				
 				
 			</div>
 
@@ -108,8 +104,7 @@
 	</div>
 
 	<!-- Modal -->
-	<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog"
-		aria-labelledby="modalLabel">
+	<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -127,8 +122,7 @@
 		</div>
 	</div>
 
-	<script src="js/jquery.min.js"></script>
-	
+	<script src="js/jquery.min.js"></script>	
 	<script src="js/bootstrap.min.js"></script>
 
 </body>
