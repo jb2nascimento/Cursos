@@ -3,6 +3,7 @@ package br.com.cliente.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.cliente.dao.base.FabricaDeConexao;
 import br.com.cliente.model.Cliente;
 
 public class ClienteDao implements IDefaultDao {
@@ -42,10 +43,34 @@ public class ClienteDao implements IDefaultDao {
 
 	@Override
 	public void insert() {
-		// TODO Auto-generated method stub
+		System.out.println("Iniciando insert");
 		
+		PreparedStatement statement = 
+						FabricaDeConexao.getConexao().prepareStatement("INSERT INTO "
+						+ "tb_cliente (nome, ultimo_nome, idade, usuario, senha)"
+						+ "VALUES (?, ?, ?, ?, ?)");
+		
+		statement.setString(1, "Allan");
+		statement.setString(2, "ta so olhando");
+		statement.setInt(3, 24);
+		statement.setString(4, "allanzinho");
+		statement.setString(5, "123");
+		
+		statement.execute();
+		
+		FabricaDeConexao.fecharConexao();
+	
 	}
-
+	
+	finally {
+		
+		try {
+			fecharConexao();
+			catch
+		}
+	}
+	
+	
 	@Override
 	public boolean update() {
 		// TODO Auto-generated method stub

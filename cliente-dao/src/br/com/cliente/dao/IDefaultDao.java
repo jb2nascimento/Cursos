@@ -4,12 +4,12 @@ import java.util.List;
 
 public interface IDefaultDao {
 	
-	public void insert();
+	public void insert() throws DaoErroTecnicoException;
 	
-	public boolean update();
+	public boolean update() throws DaoErroTecnicoException;
 	
-	public List<?> select();
+	public List<?> select()throws DaoErroTecnicoException;
 	
-	public boolean delete();	
+	public boolean delete()throws DaoErroTecnicoException;	
 
 }
