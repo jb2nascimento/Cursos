@@ -29,13 +29,6 @@ public class FabricaDeConexao {
 		
 		return conexao;
 	}
-		public static void fecharConexao() throws SQLException   {
-			
-			if(conexao != null) {
-				conexao.close();
-				
-			}
-			
-		}
+		
 	
 }
