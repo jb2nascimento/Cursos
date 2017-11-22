@@ -41,7 +41,7 @@ public class AulaJdbc {
 			
 		}
 		
-		FabricaDeConexao.fecharConexao();
+		FabricaDeConexao.getConexao().close();
 		
 	}
 	
@@ -62,7 +62,8 @@ public class AulaJdbc {
 		
 		statement.execute();
 		
-		FabricaDeConexao.fecharConexao();		
+		FabricaDeConexao.getConexao().close();
+		
 	}
 	
 	
