@@ -5,18 +5,6 @@ import java.util.List;
 
 import br.com.cliente.dao.exception.DaoErroTecnicoException;
 
-public interface IDefaultDao {
-<<<<<<< HEAD
-	
-	public void insert() throws SQLException, ClassNotFoundException;
-	
-	public boolean update();
-	
-	public List<?> select();
-	
-	
-	public boolean delete();	
-=======
 
 	public void insert() throws DaoErroTecnicoException;
 
