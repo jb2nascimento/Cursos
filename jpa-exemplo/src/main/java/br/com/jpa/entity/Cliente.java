@@ -9,6 +9,7 @@ import javax.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Data
 @NoArgsConstructor
 @Entity
@@ -24,4 +25,26 @@ public class Cliente {
 	private String usuario;
 	private String senha;
 	
+
+@NoArgsConstructor
+@Data
+@Entity
+@Table(name = "tb_cliente")
+public class Cliente {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+
+	private String nome;
+
+	private String ultimo_nome;
+
+	private int idade;
+
+	private String usuario;
+
+	private String senha;
+
+>>>>>>> branch 'master' of https://github.com/jb2nascimento/Cursos.git
 }
