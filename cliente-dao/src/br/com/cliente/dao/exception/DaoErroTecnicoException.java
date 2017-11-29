@@ -1,6 +1,7 @@
 package br.com.cliente.dao.exception;
 
 public class DaoErroTecnicoException extends Exception {
+<<<<<<< HEAD
 	
 	private static final long serialVersionUID = 5919138429695567702L;
 
@@ -8,6 +9,14 @@ public class DaoErroTecnicoException extends Exception {
 		super(e);
 		System.out.println(mensagemOpcional);
 		
+=======
+
+	private static final long serialVersionUID = 5919138429695567702L;
+	
+	public DaoErroTecnicoException(String mensagemOpcional, Exception e) {
+		super(e);
+		System.out.println(mensagemOpcional);
+>>>>>>> refs/remotes/origin/master
 	}
 
 }

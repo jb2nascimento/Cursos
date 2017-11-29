@@ -2,7 +2,10 @@ package br.com.cliente.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+<<<<<<< HEAD
 import java.sql.ResultSet;
+=======
+>>>>>>> refs/remotes/origin/master
 import java.sql.SQLException;
 import java.util.List;
 
@@ -14,7 +17,10 @@ public class ClienteDao extends BaseDao {
 
 	public ClienteDao(Connection conexao) {
 		super(conexao);
+<<<<<<< HEAD
 		// TODO Auto-generated constructor stub
+=======
+>>>>>>> refs/remotes/origin/master
 	}
 
 	@Override
@@ -25,6 +31,7 @@ public class ClienteDao extends BaseDao {
 			System.out.println("Iniciando insert");
 
 			PreparedStatement statement = conexao.prepareStatement("INSERT INTO "
+<<<<<<< HEAD
 					+ "tb_cliente (nome, ultimo_nome, idade, usuario, senha)" + "VALUES (?, ?, ?, ?, ?)");
 
 			statement.setString(1, "Alexsandro");
@@ -47,9 +54,37 @@ public class ClienteDao extends BaseDao {
 			}
 		}
 
+=======
+					+ "tb_cliente (nome, ultimo_nome, idade, usuario, senha)" 
+					+ "VALUES (?, ?, ?, ?, ?)");
+
+			statement.setString(1, "Allan");
+			statement.setString(2, "ta so olhando");
+			statement.setInt(3, 24);
+			statement.setString(4, "allanzinho");
+			statement.setString(5, "123");
+
+			statement.execute();
+
+		} catch (Exception e) {	
+			
+			throw new DaoErroTecnicoException("Ocorreu um erro ao executar o Insert", e);
+			
+		} finally {
+			
+			try {
+				fecharConexao();
+			} catch (SQLException e) {
+				throw new DaoErroTecnicoException("Erro ao fechar conexao no insert", e);
+			}
+		}	
+		
+		
+>>>>>>> refs/remotes/origin/master
 	}
 
 	@Override
+<<<<<<< HEAD
 	public boolean update() throws DaoErroTecnicoException {
 
 		try {
@@ -76,11 +111,15 @@ public class ClienteDao extends BaseDao {
 				throw new DaoErroTecnicoException("Erro ao fechar conexao no Update", e);
 			}
 		}
+=======
+	public boolean update() {
+>>>>>>> refs/remotes/origin/master
 		return false;
 
 	}
 
 	@Override
+<<<<<<< HEAD
 	public List<?> select() throws DaoErroTecnicoException {
 
 		try {
@@ -116,6 +155,11 @@ public class ClienteDao extends BaseDao {
 
 		return null;
 
+=======
+	public List<?> select() {
+		// TODO Auto-generated method stub
+		return null;
+>>>>>>> refs/remotes/origin/master
 	}
 
 	@Override
@@ -148,6 +192,9 @@ public class ClienteDao extends BaseDao {
 		}
 		return false;
 
+<<<<<<< HEAD
 	}
 
+=======
+>>>>>>> refs/remotes/origin/master
 }
