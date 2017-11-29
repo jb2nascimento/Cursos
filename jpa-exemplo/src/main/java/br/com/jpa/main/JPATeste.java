@@ -9,17 +9,20 @@ public class JPATeste {
 	public static void main(String[] args) {
 
 		Cliente clienteASalvar = new Cliente();
-				clienteASalvar.setIdade(30);
-				clienteASalvar.setNome("Jan");
-				clienteASalvar.setUltimo_nome("Nascimento");
-				clienteASalvar.setUsuario("jbnascimento");
-				clienteASalvar.setSenha("123");
+		clienteASalvar.setIdade(44);
+		clienteASalvar.setNome("Alexsandro");
+		clienteASalvar.setUltimo_nome("Silva");
+		clienteASalvar.setUsuario("aldsilva");
+		clienteASalvar.setSenha("123456");
+
+		System.out.println("Salvando Registro");
 		
-		ClienteDao dao = new ClienteDao(JPAFactory.geEntity());
+		ClienteDao dao = new ClienteDao(JPAFactory.getEntity());
+		
 		dao.salvar(clienteASalvar);
 		
-		System.out.print("Registro Salvo");
-		
+		System.out.println("Registro Salvo");
+
 	}
 
 }
