@@ -3,6 +3,8 @@
 	<name>crud-web</name>
 	<comment></comment>
 	<projects>
+		<project>crud-entity</project>
+		<project>crud-service</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

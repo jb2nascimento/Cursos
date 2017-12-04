@@ -8,7 +8,7 @@ import javax.persistence.Query;
 import br.com.cliente.Cliente;
 
 
-public class ClienteDao {
+public class ClienteDao implements IClienteDao {
 
 	private EntityManager gerenciaBancoDeDados;
 
