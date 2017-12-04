@@ -7,6 +7,9 @@
         <dependent-module archiveName="crud-entity-1.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/crud-entity/crud-entity">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="crud-service-1.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/crud-service/crud-service">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <dependent-module archiveName="crud-dao-1.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/crud-dao/crud-dao">
             <dependency-type>uses</dependency-type>
         </dependent-module>
