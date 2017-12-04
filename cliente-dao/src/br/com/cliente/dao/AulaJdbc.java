@@ -1,5 +1,50 @@
 package br.com.cliente.dao;
 
+<<<<<<< HEAD
+import java.sql.SQLException;
+
+
+public class AulaJdbc {
+	
+	public static void main (String[] args) throws ClassNotFoundException, SQLException {
+		
+		System.out.println("iniciando execucao");	
+		
+		insert();
+		
+		select();
+		
+		update();
+		
+		select();
+		
+		delete();
+		
+		select();
+		
+	}
+	
+		private static void select() throws ClassNotFoundException, SQLException {
+					
+		}
+	
+		private static void insert() throws ClassNotFoundException, SQLException {
+						
+					
+		}
+		
+		private static void delete () throws ClassNotFoundException, SQLException {
+			
+			
+		}
+		
+		private static void update () throws ClassNotFoundException, SQLException {
+	
+				
+		}
+	
+}
+=======
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -86,3 +131,4 @@ public class AulaJdbc {
 
 
 
+>>>>>>> refs/remotes/origin/master
