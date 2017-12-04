@@ -1,9 +1,29 @@
 package br.com.beans;
 
+import java.util.List;
+
+import br.com.cliente.Cliente;
+import br.com.crud.service.CrudFactory;
+import br.com.crud.service.IClienteService;
+import lombok.Getter;
+import lombok.Setter;
+
 public class ClienteBean {
 
-	public String executar() {
-		return "";
+	@Getter
+	@Setter
+	private List<Cliente> todosOsClientes;
+
+	private IClienteService clienteService;
+
+	public ClienteBean() {
+		carregarClientes();
+
+	}
+
+	public void carregarClientes() {
+		clienteService = CrudFactory.getInstance();
+		todosOsClientes = clienteService.recuperarTodosClientes();
 	}
 
 }
