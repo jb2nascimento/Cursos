@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.projeto.final</groupId>
@@ -14,13 +14,29 @@
 	<name>Projeto Final</name>
 	<description>Projeto Final do Curso de Java Web</description>
 
+	<properties>
+		<crud.versao>1.0.0-SNAPSHOT</crud.versao>
+	</properties>
+
+
 	<modules>
-<!-- 		<module>crud-web</module> -->
+		<module>crud-web</module>
 		<module>crud-dao</module>
 		<module>crud-entity</module>
 		<module>crud-service</module>
-    	<module>crud-web-2</module>
-  </modules>
+	</modules>
+
+	<dependencies>
+
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.16.18</version>
+			<scope>provided</scope>
+		</dependency>
+
+	</dependencies>
 
 	<repositories>
 		<repository>
