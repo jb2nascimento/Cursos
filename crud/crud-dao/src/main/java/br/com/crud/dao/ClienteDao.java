@@ -6,16 +6,16 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import br.com.cliente.Cliente;
+import br.com.crud.IClienteDao;
 
 
-public class ClienteDao {
+public class ClienteDao implements IClienteDao {
 
 	private EntityManager gerenciaBancoDeDados;
 
 	public ClienteDao(EntityManager entity) {
 		this.gerenciaBancoDeDados = entity;
 	}
-
 	
 	@SuppressWarnings("unchecked")
 	public List<Cliente> selectAll() {

@@ -12,6 +12,17 @@
 	<description>Projeto Final Web Final</description>
 
 	<dependencies>
+	
+		<dependency>
+			<groupId>${crud.group.id}</groupId>
+			<artifactId>crud-entity</artifactId>
+			<version>${crud.versao}</version>
+		</dependency>
+		<dependency>
+			<groupId>${crud.group.id}</groupId>
+			<artifactId>crud-service</artifactId>
+			<version>${crud.versao}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>javax.servlet</groupId>
