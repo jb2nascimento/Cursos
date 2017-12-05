@@ -6,10 +6,14 @@ import br.com.cliente.Cliente;
 import br.com.crud.service.CrudFactory;
 import br.com.crud.service.IClienteService;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Data
 public class ClienteBean {
 
+	@Getter
+	@Setter
 	private List<Cliente> todosOsClientes;
 
 	private IClienteService clienteService;

@@ -20,6 +20,30 @@
 					<t:commandButton action="" value="Pesquisar"
 						styleClass="waves-effect waves-light btn" />
 
+					<h:dataTable var="cliente1" value="#{clienteBean.todosOsClientes}">
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="nome" />
+							</f:facet>
+							<h:outputText value="#{cliente1.nome}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="ultimo_nome" />
+							</f:facet>
+							<h:outputText value="#{cliente1.ultimo_nome}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="idade" />
+							</f:facet>
+							<h:outputText value="#{cliente1.idade}" />
+						</h:column>
+
+					</h:dataTable>
+
+
+
 				</t:div>
 
 			</t:div>
