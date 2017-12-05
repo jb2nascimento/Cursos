@@ -19,7 +19,7 @@
 
 					<t:commandButton action="" value="Pesquisar"
 						styleClass="waves-effect waves-light btn" />
-
+<!-- Trabalho final: criar um Grid... -->
 					<h:dataTable var="cliente1" value="#{clienteBean.todosOsClientes}">
 						<h:column>
 							<f:facet name="header">
