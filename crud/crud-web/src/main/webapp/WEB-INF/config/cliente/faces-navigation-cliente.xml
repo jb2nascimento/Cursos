@@ -8,6 +8,11 @@
 
 	<navigation-rule>
 
+		<navigation-case>
+			<from-outcome>index</from-outcome>
+			<to-view-id>/cliente.tiles</to-view-id>
+		</navigation-case>
+
 	</navigation-rule>
 
 </faces-config>

@@ -14,4 +14,9 @@ public class ClienteServiceImpl implements IClienteService {
 		return daoService.selectAll();
 	}
 
+	public List<Cliente> filtrarClientes(String termo) {
+		IClienteDao daoService = CrudDaoFactory.getInstance();
+		return daoService.selectByTermo(termo);
+	}
+
 }

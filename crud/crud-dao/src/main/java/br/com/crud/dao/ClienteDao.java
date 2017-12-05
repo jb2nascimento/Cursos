@@ -10,7 +10,8 @@ import br.com.crud.IClienteDao;
 
 
 public class ClienteDao implements IClienteDao {
-
+	
+	
 	private EntityManager gerenciaBancoDeDados;
 
 	public ClienteDao(EntityManager entity) {
@@ -24,4 +25,24 @@ public class ClienteDao implements IClienteDao {
 		return todoOsRegistros;
 	}
 
+	@SuppressWarnings("unchecked")
+	public List<Cliente> selectByTermo(String termo) {		
+		
+		Query query = this.gerenciaBancoDeDados
+				.createQuery("select c from Cliente c where c.nome LIKE lower(:nome)");
+		
+		query.setParameter("nome", "%" + termo + "%");
+		
+		List<Cliente> todoOsRegistros =  query.getResultList();
+		return todoOsRegistros;
+	}
+	
+	
+	
+
 }
+
+
+
+
+

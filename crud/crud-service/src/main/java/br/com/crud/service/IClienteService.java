@@ -10,5 +10,7 @@ public interface IClienteService {
 	public List<Cliente> recuperarTodosClientes();
 	
 	
+	public List<Cliente> filtrarClientes(String termo);
+	
 
 }

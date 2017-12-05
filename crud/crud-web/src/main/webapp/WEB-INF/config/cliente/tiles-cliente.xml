@@ -4,11 +4,19 @@
 <tiles-definitions>
 
 	<definition name="cliente.tiles" extends="nib.main">
-				
+
 		<put name="subtitulo" value="Cliente" />
 		<put name="body" value="/WEB-INF/jsp/cliente.jsp" />
-			
-	</definition>  
+
+		<putList name="css">
+			<item value="clienteCss" link="app/libs/css/cliente/cliente.css" tooltip="screen, print" />
+		</putList>
+
+		<putList name="js">
+			<item value="clienteJs" link="app/libs/js/cliente/cliente.js" />
+		</putList>
+
+	</definition>
 
 
 </tiles-definitions>
