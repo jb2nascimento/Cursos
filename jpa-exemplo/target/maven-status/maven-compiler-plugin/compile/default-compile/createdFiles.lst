@@ -1,4 +1,3 @@
-br\com\jpaexemplo\JPAUtil.class
-br\com\jpaexemplo\dao\ClienteDao.class
-br\com\jpaexemplo\entity\Cliente.class
-br\com\jpaexemplo\JPATeste.class
+br\com\jpa\dao\ClienteDao.class
+br\com\jpa\entity\Cliente.class
+br\com\jpa\JPAFactory.class
