@@ -7,6 +7,7 @@
 
 		<put name="subtitulo" value="Cliente" />
 		<put name="body" value="/WEB-INF/jsp/cliente.jsp" />
+		<put name="manutencao" value="/WEB-INF/jsp/manutencao.jsp" />
 
 		<putList name="css">
 			<item value="clienteCss" link="app/libs/css/cliente/cliente.css" tooltip="screen, print" />

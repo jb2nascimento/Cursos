@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15125992912020" configfile="/crud-web/src/main/webapp/WEB-INF/config/cliente/faces-navigation-cliente.xml">
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="178" id="pf15125993186281" outlinks="pf15125993186282 pf151259974632811" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="cliente.tiles" x="338" y="178" id="pf15125993186284" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf15125993186282 pf151259974632811" path="/cliente.tiles"/>
+  <links id="pf15125993186282" target="pf15125993186284" source="pf15125993186281" outcome="index"/>
+  <links id="pf151259974632811" target="pf15125993186284" source="pf15125993186281" outcome="manutencao"/>
+</pageflow:Pageflow>

@@ -12,6 +12,11 @@
 			<from-outcome>index</from-outcome>
 			<to-view-id>/cliente.tiles</to-view-id>
 		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>manutencao</from-outcome>
+			<to-view-id>/cliente.tiles</to-view-id>
+		</navigation-case>		
 
 	</navigation-rule>
 
