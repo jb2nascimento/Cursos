@@ -54,10 +54,6 @@
 	</head>
 
 	<body>
-	
-		<t:inputText styleClass="form-control" id="txtPesquisa2" value="">
-			<t:outputText styleClass="input-group-btn" />
-		</t:inputText>
 
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container-fluid">
@@ -74,9 +70,13 @@
 			</div>
 		</nav>
 		
+		<t:div styleClass="progress loading-do-sistema" id="loading" style="margin-top: 22px;">
+			<t:div styleClass="indeterminate" />
+		</t:div>
+		
 		<div id="main" class="container-fluid" style="margin-top: 50px">
 			<div id="top" class="row">
-				<div class="col-sm-3">
+				<div class="col-sm-12">
 					<h2>${subtitulo}</h2>
 				</div>
 			</div>

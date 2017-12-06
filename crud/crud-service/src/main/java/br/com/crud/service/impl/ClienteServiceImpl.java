@@ -19,4 +19,9 @@ public class ClienteServiceImpl implements IClienteService {
 		return daoService.selectByTermo(termo);
 	}
 
+	public void salvarCliente(Cliente cliente) {
+		IClienteDao daoService = CrudDaoFactory.getInstance();
+		daoService.salvar(cliente);
+	}
+
 }

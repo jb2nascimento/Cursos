@@ -8,16 +8,14 @@ import javax.persistence.Query;
 import br.com.cliente.Cliente;
 import br.com.crud.IClienteDao;
 
-
 public class ClienteDao implements IClienteDao {
-	
-	
+
 	private EntityManager gerenciaBancoDeDados;
 
 	public ClienteDao(EntityManager entity) {
 		this.gerenciaBancoDeDados = entity;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public List<Cliente> selectAll() {
 		Query query = this.gerenciaBancoDeDados.createQuery("select c from Cliente c");
@@ -26,23 +24,31 @@ public class ClienteDao implements IClienteDao {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Cliente> selectByTermo(String termo) {		
-		
-		Query query = this.gerenciaBancoDeDados
-				.createQuery("select c from Cliente c where c.nome LIKE lower(:nome)");
-		
+	public List<Cliente> selectByTermo(String termo) {
+
+		Query query = this.gerenciaBancoDeDados.createQuery("select c from Cliente c where c.nome LIKE lower(:nome)");
+
 		query.setParameter("nome", "%" + termo + "%");
-		
-		List<Cliente> todoOsRegistros =  query.getResultList();
+
+		List<Cliente> todoOsRegistros = query.getResultList();
 		return todoOsRegistros;
 	}
-	
-	
-	
+
+	public void salvar(Cliente cliente) {
+
+		try {
+			gerenciaBancoDeDados.getTransaction().begin();
+
+			if (cliente.getId() != null)
+				gerenciaBancoDeDados.merge(cliente);
+			else
+				gerenciaBancoDeDados.persist(cliente);
+
+			gerenciaBancoDeDados.getTransaction().commit();
+		} catch (Exception e) {
+			gerenciaBancoDeDados.getTransaction().rollback();
+		}
+
+	}
 
 }
-
-
-
-
-

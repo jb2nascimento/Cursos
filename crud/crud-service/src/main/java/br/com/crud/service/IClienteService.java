@@ -12,5 +12,8 @@ public interface IClienteService {
 	
 	public List<Cliente> filtrarClientes(String termo);
 	
+	
+	public void salvarCliente(Cliente cliente);
+	
 
 }
