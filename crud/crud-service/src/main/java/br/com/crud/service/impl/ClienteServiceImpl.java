@@ -9,9 +9,11 @@ import br.com.crud.service.IClienteService;
 
 public class ClienteServiceImpl implements IClienteService {
 
+
 	public List<Cliente> recuperarTodosClientes() {
 		IClienteDao daoService = CrudDaoFactory.getInstance();
 		return daoService.selectAll();
 	}
+	
 
 }

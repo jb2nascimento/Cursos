@@ -18,7 +18,29 @@
 					</t:inputText>
 
 					<t:commandButton action="" value="Pesquisar"
-						styleClass="waves-effect waves-light btn" />
+						styleClass="waves-effect waves-light btn"  />
+					
+					<h:dataTable var="listaCliente" value="#{clienteBean.todosOsClientes}">
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Nome" />
+							</f:facet>
+							<h:outputText value="#{listaCliente.nome}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Sobrenome" />
+							</f:facet>
+							<h:outputText value="#{listaCliente.ultimo_nome}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Idade" />
+							</f:facet>
+							<h:outputText value="#{listaCliente.idade}" />
+						</h:column>
+					</h:dataTable>
+
 
 				</t:div>
 

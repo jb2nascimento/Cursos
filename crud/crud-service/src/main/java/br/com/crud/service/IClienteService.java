@@ -9,6 +9,4 @@ public interface IClienteService {
 	
 	public List<Cliente> recuperarTodosClientes();
 	
-	
-
 }
