@@ -19,26 +19,46 @@
 
 					<t:commandButton action="" value="Pesquisar"
 						styleClass="waves-effect waves-light btn" />
-<!-- Trabalho final: criar um Grid... -->
+
+					<t:commandButton action="" value="Novo"
+						styleClass="waves-effect waves-light btn" />
+
+					<!-- Trabalho final: criar um Grid... -->
+
 					<h:dataTable var="cliente1" value="#{clienteBean.todosOsClientes}">
 						<h:column>
 							<f:facet name="header">
-								<h:outputText value="nome" />
+								<h:outputText value="Nome" />
 							</f:facet>
 							<h:outputText value="#{cliente1.nome}" />
 						</h:column>
 						<h:column>
 							<f:facet name="header">
-								<h:outputText value="ultimo_nome" />
+								<h:outputText value="Sobrenome" />
 							</f:facet>
 							<h:outputText value="#{cliente1.ultimo_nome}" />
 						</h:column>
 						<h:column>
 							<f:facet name="header">
-								<h:outputText value="idade" />
+								<h:outputText value="Idade" />
 							</f:facet>
 							<h:outputText value="#{cliente1.idade}" />
 						</h:column>
+
+						<!-- 	Editar...					 -->
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Ações" />
+							</f:facet>
+							<h:commandLink action="#{clienteBean.carregarClientes}">
+								<t:updateActionListener
+									property="#{clienteBean.todosOsClientes}" value="#{cliente1}" />
+								<h:outputText value="Editar" />
+							</h:commandLink>
+						</h:column>
+
+
 
 					</h:dataTable>
 
