@@ -37,5 +37,11 @@ public class ClienteBean {
 		return "index";
 
 	}
+	
+	public String manutencao() {
+	
+		return "manutencao";
+
+	}
 
 }

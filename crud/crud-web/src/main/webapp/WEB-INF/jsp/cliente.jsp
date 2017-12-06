@@ -25,7 +25,7 @@
 								id="btn-pesquisar" style="float:left">
 							</t:commandButton>
 						</t:div>
-						<t:commandButton action="" value="Novo"
+						<t:commandButton action="#{clienteBean.manutencao}" value="Novo"
 							styleClass="waves-effect waves-light btn-large" id="btn-novo"
 							style="float:left">
 						</t:commandButton>
@@ -46,7 +46,7 @@
 				</h:column>
 				<h:column>
 					<f:facet name="header">
-						<h:outputText value="Ultimo Nome" />
+						<h:outputText value="Último Nome" />
 					</f:facet>
 					<h:outputText value="#{cliente.ultimo_nome}" />
 				</h:column>
@@ -56,6 +56,14 @@
 					</f:facet>
 					<h:outputText value="#{cliente.idade}" />
 				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Ações" />
+					</f:facet>
+					<h:commandButton value="Editar" style="margin-right: 10px;" />					
+					<h:commandButton value="Excluir" />
+				</h:column>
+
 			</t:dataTable>
 
 		</h:form>

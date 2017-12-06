@@ -3,11 +3,15 @@
 
 <tiles-definitions>
 
+
 	<definition name="nib.main" path="/WEB-INF/jsp/template/main.jsp">
 
+		
 		<put name="subtitulo" value="" />
 		<put name="messageBundle" value="" />
 		<put name="body" value="" />
+		<put name="manutencao" value="/WEB-INF/jsp/manutencao.jsp" />
+		
 
 		<putList name="css">
 		</putList>
