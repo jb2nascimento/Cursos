@@ -1,8 +1,12 @@
 package br.com.beans;
 
 import java.util.List;
+import java.util.Map;
+
+import javax.faces.context.FacesContext;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.math.NumberUtils;
 
 import br.com.cliente.Cliente;
 import br.com.crud.service.CrudFactory;
@@ -13,10 +17,10 @@ import lombok.Data;
 public class ClienteBean {
 
 	private List<Cliente> todosOsClientes;
-
 	private IClienteService clienteService;
-
 	private String termoPesquisa;
+	private Cliente clienteAEditar;
+	
 
 	public ClienteBean() {
 		carregarClientes();
@@ -27,6 +31,45 @@ public class ClienteBean {
 		todosOsClientes = clienteService.recuperarTodosClientes();
 	}
 
+	public String manutencao() {
+		return "manutencao";
+	}
+
+	public String voltarPaginaPrincipal() {
+		return "index";
+	}
+
+	@SuppressWarnings("unchecked")
+	public String atualizarCliente() {
+
+		Map<String, String> params = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
+		String id = params.get("id");
+
+		if (StringUtils.isNotEmpty(id) && NumberUtils.isNumber(id)) {
+			clienteAEditar = todosOsClientes.get(Integer.parseInt(id));
+		}
+
+		return "manutencao";
+	}
+
+	public String salvarCliente() {
+
+		String paginaVoltar = "manutencao";
+
+		if (StringUtils.isNotEmpty(clienteAEditar.getNome())
+				&& StringUtils.isNotEmpty(clienteAEditar.getUltimo_nome())) {
+
+			IClienteService service = CrudFactory.getInstance();
+			service.salvarCliente(clienteAEditar);
+			
+			clienteAEditar = new Cliente();
+
+			return "index";
+		}
+
+		return paginaVoltar;
+	}
+
 	public String pesquisarClientes() {
 
 		if (StringUtils.isNotEmpty(this.termoPesquisa)) {
@@ -35,13 +78,22 @@ public class ClienteBean {
 		}
 
 		return "index";
-
 	}
 	
-	public String manutencao() {
-	
-		return "manutencao";
+	@SuppressWarnings("unchecked")
+	public String excluirCliente() {
 
+		Map<String, String> params = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
+		String id = params.get("id");
+
+		if (StringUtils.isNotEmpty(id) && NumberUtils.isNumber(id)) {			
+			clienteService = CrudFactory.getInstance();
+			clienteAEditar = todosOsClientes.get(Integer.parseInt(id));
+			clienteService.excluirCliente(clienteAEditar);
+			pesquisarClientes();
+		}
+		
+		return "index";
 	}
 
 }

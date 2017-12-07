@@ -19,8 +19,9 @@
 
 					<t:div id="div-botao" style="float:right">
 
-						<t:div style="margin-left:-185px">
-							<t:commandButton action="#{clienteBean.pesquisarClientes}" value="Pesquisar"
+						<t:div style="margin-left:-160px">
+							<t:commandButton action="#{clienteBean.pesquisarClientes}"
+								value="Pesquisar"
 								styleClass="waves-effect waves-light btn-large"
 								id="btn-pesquisar" style="float:left">
 							</t:commandButton>
@@ -37,7 +38,7 @@
 			</t:div>
 
 			<t:dataTable var="cliente" value="#{clienteBean.todosOsClientes}"
-				styleClass="tb-cliente">
+				styleClass="tb-cliente" rowIndexVar="index">
 				<h:column>
 					<f:facet name="header">
 						<h:outputText value="Nome" />
@@ -46,7 +47,7 @@
 				</h:column>
 				<h:column>
 					<f:facet name="header">
-						<h:outputText value="Último Nome" />
+						<h:outputText value="Ultimo Nome" />
 					</f:facet>
 					<h:outputText value="#{cliente.ultimo_nome}" />
 				</h:column>
@@ -58,16 +59,35 @@
 				</h:column>
 				<h:column>
 					<f:facet name="header">
-						<h:outputText value="Ações" />
+						<h:outputText value="Acoes" />
 					</f:facet>
-					<h:commandButton value="Editar" style="margin-right: 10px;" />					
-					<h:commandButton value="Excluir" />
+					<t:commandLink action="#{clienteBean.atualizarCliente}" 
+						value="Editar" style="margin-right: 10px;"
+						styleClass="waves-effect waves-light" id="btn-editar">
+						<f:param name="id" value="#{index}"></f:param>
+					</t:commandLink>
+					<t:commandLink action="#{clienteBean.excluirCliente}" value="Excluir"
+						styleClass="waves-effect waves-light" id="btn-excluir">
+						<f:param name="id" value="#{index}"></f:param>
+					</t:commandLink>
 				</h:column>
-
 			</t:dataTable>
 
 		</h:form>
 
 	</t:div>
 
+
+
 </t:div>
+
+
+
+<script type="text/javascript">
+<!--
+	esconderLoading();
+
+	jQuery('ul.tabs').tabs();
+	
+//-->
+</script>

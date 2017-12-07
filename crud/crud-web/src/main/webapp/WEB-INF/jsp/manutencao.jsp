@@ -4,42 +4,43 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://myfaces.apache.org/tomahawk" prefix="t"%>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<t:div styleClass="container">
 
-<html>
+	<t:div styleClass="row">
 
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Manutenção Cliente</title>
-</head>
+		<h:form styleClass="col s12">
 
-<body>
- 
-	<f:view>
+			<t:div styleClass="row">
 
-		<h:form> 
+				<t:div styleClass="input-field col s12">
 
-			<h:panelGrid columns="1"> 
+					<t:inputText id="nome" value="#{clienteBean.clienteAEditar.nome }" />
 
-				<h:outputLabel value="Nome:" />
-				<h:inputText value="#{clienteBean.nome }" />
+					<t:inputText id="sobrenome" value="#{clienteBean.clienteAEditar.ultimo_nome }" />
 
-				<h:outputLabel value="Idade:" />
-				<h:inputText value="#{clienteBean.ultimo_nome }" />
+					<t:inputText id="idade" value="#{clienteBean.clienteAEditar.idade }" />
 
-				<h:outputLabel value="Telefone" />
-				<h:inputText value="#{clienteBean.idade }" />
+					<t:div id="div-botao" style="float:right">
 
-			
+						<t:div style="margin-left:-160px">
+							<t:commandButton action="#{clienteBean.salvarCliente}" value="Salvar"
+								styleClass="waves-effect waves-light btn-large" id="btn-salvar"
+								style="float:left" onclick="aparecerLoading();">
+							</t:commandButton>
+						</t:div>
+						<t:commandButton action="#{clienteBean.voltarPaginaPrincipal}" value="Cancelar"
+							styleClass="waves-effect waves-light btn-large" id="btn-cancelar"
+							style="float:left">
+						</t:commandButton>
 
-			</h:panelGrid>
+					</t:div>
 
-			<h:messages />
+				</t:div>
+
+			</t:div>
 
 		</h:form>
 
-	</f:view>
-	
-</body>
+	</t:div>
 
-</html>
+</t:div>
